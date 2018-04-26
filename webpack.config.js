@@ -57,7 +57,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/spacecode-[hash].[ext]',
+              name: 'fonts/[hash].[ext]',
             }
           }
         ]
