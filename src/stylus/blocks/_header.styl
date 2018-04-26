@@ -1,11 +1,12 @@
 .Header
   padding-top 2.5rem
+  flex 0 0 auto
   &__logo
     width 21.9rem
     height 7.2rem
     background var(--logoImage) center center/cover no-repeat
     flex 0 0 auto
-    transition background-image .3s
+    transition background-image var(--transition)
     will-change: background-image
   &__container
     display flex
@@ -29,14 +30,14 @@
     background-color var(--secondaryColor)
     border-radius 50px
     cursor pointer
-    transition: background-color .3s
+    transition: background-color var(--transition)
     will-change: background-color
   &__image
     width 1.6em
     height 1.6rem
     background var(--switchImage) center center/cover no-repeat
     margin-right 1.2rem
-    transition background-image .3s
+    transition background-image var(--transition)
     will-change: background-image
   &__circle
     position absolute
@@ -47,5 +48,5 @@
     height 1.2rem
     border-radius 50%
     background-color var(--primaryColor)
-    transition left .3s, background-color .3s
+    transition left var(--transition), background-color var(--transition)
     will-change: left, background-color

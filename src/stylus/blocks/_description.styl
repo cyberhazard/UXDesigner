@@ -1,0 +1,42 @@
+.Description
+  flex-grow: 1
+  display flex
+  justify-content center
+  align-items center
+  &__container
+    width 78rem
+  &__heading
+    font-size: 5rem
+    font-weight: 900
+    color var(--secondaryColor)
+    text-align center
+    margin-bottom 2.4rem
+    transition color var(--transition)
+    will-change: color
+  &__text
+    width 90%
+    margin 0 auto 4rem auto
+    font-size: 1.8rem
+    font-weight: 400
+    color var(--secondaryColor)
+    text-align center
+    transition color var(--transition)
+    will-change: color
+    line-height 2.8rem
+  &__socials
+    display flex
+    justify-content center
+  &__link
+    margin-right 3.8em
+    transition transform var(--transition)
+    will-change: transform
+    &:last-child
+      margin-right 0
+      & path
+        transition fill var(--transition)
+        will-change: fill
+    & svg
+      height 4rem
+    &:hover
+      transform translateY(-.5rem)
+

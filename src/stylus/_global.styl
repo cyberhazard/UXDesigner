@@ -13,6 +13,7 @@ html
   --secondaryColor: black;
   --logoImage: url('./../images/logo-black.svg')
   --switchImage: url('./../images/Moon.svg')
+  --transition: .5s
 }
 
 .Page {
@@ -27,13 +28,17 @@ html
 .Top
   height 62vh
   background-color var(--primaryColor)
-  transition background-color .3s
+  transition background-color var(--transition)
   will-change: background-color
+  display flex
+  flex-direction column
 .Bottom
   height 38vh
   background-color var(--secondaryColor)
-  transition background-color .3s
+  transition background-color var(--transition)
   will-change: background-color
+  display flex
+  flex-direction columns
 
 .g-wrapper
   max-width: 120rem
