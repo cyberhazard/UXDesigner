@@ -1,0 +1,26 @@
+.Footer
+  padding-bottom 3.6rem
+  &__container
+    display flex
+    justify-content space-between
+    align-items center
+  &__copyright
+    font-size 1.4rem
+    color var(--primaryColor)
+    opacity 0.5
+  &__socials
+    display flex
+    justify-content flex-start
+    align-items center
+  &__social
+    margin-right 2.8rem
+    transition transform var(--transition)
+    will-change: transform
+    &:last-child
+      margin-right 0
+    & path
+        transition fill var(--transition)
+        will-change: fill
+        fill var(--primaryColor)
+    &:hover
+      transform translateY(-.5rem)
