@@ -16,3 +16,11 @@ colorSwitch.addEventListener('change', e => {
     root.style.setProperty('--switchImage', '')
   }
 })
+
+const copyRightYear = () => {
+  const data = new Date();
+  const year = data.getFullYear()
+  const element = document.querySelector('.Footer__copyright');
+  element.innerHTML = "Copyright © 2017-" + year + " UXDesigner.I’m"
+}
+copyRightYear();
