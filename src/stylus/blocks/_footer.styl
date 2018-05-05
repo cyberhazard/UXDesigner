@@ -25,7 +25,11 @@
         fill var(--primaryColor)
     &:hover
       transform translateY(-.5rem)
-
+@media (max-width 1280px)
+  .Footer
+    &__social
+      & svg
+        width 90%
 @media (max-width 667px)
   .Footer
     padding-bottom 4rem
@@ -37,3 +41,6 @@
       font-size 1.2rem
     &__socials
       margin-bottom 6rem
+    &__social
+      & svg
+        width 100%
