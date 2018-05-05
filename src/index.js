@@ -36,16 +36,12 @@ const subscribe = () => {
     if (!regular.test(el.value)) {
       alert.style.color = "#E11515";
       alert.innerHTML = "* Incorrect e-mail address! Verify that the input is correct";
-      setTimeout(_ => {
-        alert.innerHTML = "";
-      }, 3000)
+      setTimeout(_ => { alert.innerHTML = "" }, 3000);
     } else {
       sendMail().then(
         alert.style.color = "var(--primaryColor)",
         alert.innerHTML="You have successfully subscribed, thank you!",
-        setTimeout(_ => {
-          alert.innerHTML = "";
-        }, 3000),
+        setTimeout(_ => { alert.innerHTML = "" }, 3000),
         form.reset()
       );
     }
