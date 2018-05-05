@@ -24,3 +24,43 @@ const copyRightYear = () => {
   element.innerHTML = "Copyright © 2017-" + year + " UXDesigner.I’m"
 }
 copyRightYear();
+
+
+const subscribe = () => {
+  const form = document.querySelector('.Subscribe__form');
+  const input = document.querySelector('.Subscribe__input');
+  const alert = document.querySelector('.Subscribe__alert');
+  const regular = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi;
+
+  const validate = (el) => {
+    if (!regular.test(el.value)) {
+      alert.style.color = "#E11515";
+      alert.innerHTML = "* Incorrect e-mail address! Verify that the input is correct";
+      setTimeout(_ => {
+        alert.innerHTML = "";
+      }, 3000)
+    } else {
+      sendMail().then(
+        alert.style.color = "var(--primaryColor)",
+        alert.innerHTML="You have successfully subscribed, thank you!",
+        setTimeout(_ => {
+          alert.innerHTML = "";
+        }, 3000),
+        form.reset()
+      );
+    }
+  }
+
+  const sendMail = function() {
+    return fetch('https://cp.unisender.com/ru/subscribe?hash=6wcacndtmdefaaaa4xyx69fwniggntno9t7wnz7m1wqgx3jehekto', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+  };
+
+  form.onsubmit = e => {
+    e.preventDefault();
+    validate(input);
+  }
+}
+subscribe();
