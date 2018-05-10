@@ -33,13 +33,12 @@ const subscribe = () => {
   const api = 'https://api.unisender.com/ru/api/subscribe?format=json&api_key=6wkhfat5zcsi54416q9hxe634i6gso4x7wf7m4xy&list_ids=13433066&fields[email]='
   const regular = /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi;
 
-  const validate = (el) => {
-    if (!regular.test(el.value)) {
+  const validate = (el,value) => {
+    if (!regular.test(value)) {
       alert.style.color = "#E11515";
       alert.innerHTML = "* Incorrect e-mail address! Verify that the input is correct";
       setTimeout(_ => { alert.innerHTML = "" }, 3000);
     } else {
-      var value = document.querySelector('.Subscribe__input').value;
       sendMail(api,value).then(
         alert.style.color = "var(--primaryColor)",
         alert.innerHTML="You have successfully subscribed, thank you!",
@@ -56,8 +55,8 @@ const subscribe = () => {
 
   form.onsubmit = e => {
     e.preventDefault();
-    validate(input);
+    var value = document.querySelector('.Subscribe__input').value
+    validate(input, value);
   }
 }
 subscribe();
-// https://api.unisender.com/ru/api/subscribe?format=json&api_key=6wkhfat5zcsi54416q9hxe634i6gso4x7wf7m4xy&list_ids=13433066&fields[email]=EMAIL
