@@ -2,12 +2,13 @@
   padding-top 2.5rem
   flex 0 0 auto
   &__logo
-    width 21.9rem
-    height 7.2rem
-    background var(--logoImage) center center/cover no-repeat
     flex 0 0 auto
-    transition background-image var(--transition)
-    will-change: background-image
+    & svg
+      width 21.9rem
+      height 7.2rem
+      & path
+        transition fill var(--transition)
+        will-change: fill
   &__container
     display flex
     justify-content space-between
