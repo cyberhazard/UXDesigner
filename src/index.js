@@ -4,16 +4,18 @@ const root = document.querySelector(':root');
 const colorSwitch = document.querySelector('.Switch input');
 
 colorSwitch.addEventListener('change', e => {
+  const sun = document.querySelector('.Switch__image_sun')
+  const moon = document.querySelector('.Switch__image_moon')
   if (e.target.checked) {
     root.style.setProperty('--primaryColor', 'black')
     root.style.setProperty('--secondaryColor', 'white')
     root.style.setProperty('--inputPrimaryColor', '#DDDDDD')
-    root.style.setProperty('--switchImage', `url(${require('./images/Sun.svg')})`)
+    sun.style.opacity = 1; moon.style.opacity = 0;
   } else {
     root.style.setProperty('--primaryColor', '')
     root.style.setProperty('--secondaryColor', '')
     root.style.setProperty('--inputPrimaryColor', '')
-    root.style.setProperty('--switchImage', '')
+    sun.style.opacity = moon.style.opacity = '';
   }
 })
 

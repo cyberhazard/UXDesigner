@@ -3,7 +3,9 @@ header.Header
     .Header__container
       .Header__logo: include ../../images/logo-black.svg
       .Switch
-        .Switch__image
+        .Switch__images
+          img.Switch__image.Switch__image_moon(src=require('./../../images/Moon.svg'))
+          img.Switch__image.Switch__image_sun(src=require('./../../images/Sun.svg'))
         input(type="checkbox" id="switch")
         label(for="switch").Switch__container
           .Switch__circle

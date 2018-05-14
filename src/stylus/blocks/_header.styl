@@ -33,13 +33,21 @@
     cursor pointer
     transition: background-color var(--transition)
     will-change: background-color
-  &__image
+  &__images
+    position relative
     width 16px
     height 16px
-    background var(--switchImage) center center/contain no-repeat
     margin-right 1.2rem
-    transition background-image var(--transition)
-    will-change: background-image
+  &__image
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    transition: opacity var(--transition)
+    will-change: opacity
+    &_sun
+      opacity 0
   &__circle
     position absolute
     top 50%
